@@ -75,9 +75,36 @@ var stopwatch = {
 
     console.log(seconds); 
 
-    $("#display").text(seconds);
+    $("#display").text("Remaining time: " + seconds + " seconds.");
   },
 
+};
+
+  var radios = "";
+  var val= "";
+  var win=0;
+
+
+var submitAnswer = function() {
+
+  var radios = document.getElementsByName('choice');
+
+  for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+         val = radios[i].value; 
+         break;
+       }
+  }
+  
+  if (val == "" ) {
+    alert('please select choice answer');
+  } else if ( val == "Answer1" ) {
+    console.log('Answer is correct !');
+    win++;
+    $("#wins").text("Wins = " + win);
+  } else {
+    console.log('Answer is wrong');
+  }
 };
 
 

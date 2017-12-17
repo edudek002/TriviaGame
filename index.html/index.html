@@ -37,10 +37,18 @@
 
       <h2>Question 1</h2>
       <br>
-      <button id="Ans1">Answer1</button>
-      <button id="Ans2">Answer2</button>
-      <button id="Ans3">Answer3</button>
-      <button id="Ans4">Answer4</button>
+      
+
+
+      <form >
+        <input type="radio" name="choice" value="Answer1"> Answer1
+        <input type="radio" name="choice" value="Answer2"> Answer2
+        <input type="radio" name="choice" value="Answer3"> Answer3
+        <input type="radio" name="choice" value="Answer4">Answer4
+      </form>
+      <button onclick="submitAnswer()">Submit Answer</button>
+      <br>
+      <div id="wins"></div>
 
 
       </div>
@@ -53,7 +61,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Script -->
-    <script type="text/javascript" src="../assets/javascript/app1.js"></script>
+    <script type="text/javascript" src="../assets/javascript/app.js"></script>
 
   </body>
 
