@@ -23,7 +23,7 @@
 
     <div id="Page1">
 
-      <p>VERY AWESOME GAME</p>
+      <p>A VERY AWESOME GAME</p>
 
       <br>
       <br>
@@ -36,15 +36,24 @@
     </div>
 
 
+
     <div id="Page2" style="display:none">Content of page 2
       <a href="#" onclick="return show('Page1','Page2');">Show page 1</a>
+    <!--
+
+    <button id="SubmitAnswer"<a onclick="return show('Page2','Page1');">Start the game</a></button>
+    -->
+
+    <button onclick="submitAnswer()"><a onclick="return show('Page3','Page2');">Submit Answer</a></button>
+
+
     
 
       <div id="wrapper">
 
-        <p>VERY AWESOME GAME</p>
+        <p>A VERY AWESOME GAME</p>
 
-      <div id="display">Remaining time: 120 seconds.</div>
+      <div id="display">Remaining time: 20 seconds.</div>
 
       <br>
       <div>
@@ -58,8 +67,44 @@
         <input type="radio" name="choice" value="Answer3"> Answer3
         <input type="radio" name="choice" value="Answer4">Answer4
       </form>
+      
+      <br>
+      <div id="information"></div>
+      <div id="wins"></div>
+
+
+      </div>
+
+    </div>
+
+    </div>
+
+
+    <div id="Page3" style="display:none">Content of page 3
+      <a href="#" onclick="return show('Page2','Page3');">Show page 2</a>
+    
+
+      <div id="wrapper">
+
+        <p>A VERY AWESOME GAME</p>
+
+      <div id="display">Remaining time: 20 seconds.</div>
+
+      <br>
+      <div>
+
+      <h2>Question 2</h2>
+      <br>
+      
+      <form >
+        <input type="radio" name="choice" value="Answer1"> Answer1
+        <input type="radio" name="choice" value="Answer2"> Answer2
+        <input type="radio" name="choice" value="Answer3"> Answer3
+        <input type="radio" name="choice" value="Answer4">Answer4
+      </form>
       <button onclick="submitAnswer()">Submit Answer</button>
       <br>
+      <div id="information"></div>
       <div id="wins"></div>
 
 
