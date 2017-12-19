@@ -26,7 +26,7 @@
       <br>
       <br>
       <div id="buttons">
-        <button id="start"<a onclick="return show('Page2','Page1');">Start the game</a></button>
+        <button id="start"<a onclick="return show('Page2','Page1');">START</a></button>
       </div>
     </div>
 
@@ -36,39 +36,70 @@
       
       <div id="wrapper">
         <p>A VERY AWESOME GAME</p>
+
+      
         <div id="display"></div>
         <br>
-        <h2>Question 1</h2>
-        <br>
+
+        
+
+
+        <h2 id="question1"></h2>
+      
+        <h2 id="true1"></h2>
+
         <form >
-          <input type="radio" name="choice" value="Answer1"> Answer1
-          <input type="radio" name="choice" value="Answer2"> Answer2
-          <input type="radio" name="choice" value="Answer3"> Answer3
-          <input type="radio" name="choice" value="Answer4"> Answer4
-        </form>
-        <br>
-        <h2>Question 2</h2>
-        <br>
+          <input type="radio" name="choice" value="1"> Answer1
+          <input type="radio" name="choice" value="2"> Answer2
+          <input type="radio" name="choice" value="3"> Answer3
+          <input type="radio" name="choice" value="4"> Answer4
+        </form> 
+  
+
+        <h2 id="question2"></h2>
+
+        <h2 id="true2"></h2>
+      
         <form >
-          <input type="radio" name="choice" value="Answer1"> Answer1
-          <input type="radio" name="choice" value="Answer2"> Answer2
-          <input type="radio" name="choice" value="Answer3"> Answer3
-          <input type="radio" name="choice" value="Answer4"> Answer4
+          <input type="radio" name="choice" value="5"> Answer1
+          <input type="radio" name="choice" value="6"> Answer2
+          <input type="radio" name="choice" value="7"> Answer3
+          <input type="radio" name="choice" value="8"> Answer4
+          <!--<input type="submit" value="submit">-->
         </form>
+
+        <!--
        
-        <button onclick="submitAnswer()"><a onclick="return show('Page3','Page2');">Submit Answers</a></button>
+        <button onclick="submitAnswer()">Submit Answers</a></button> -->
+
+        <div id="information"></div>
+        <div id="wins"> = wins</div>
+
+        <button onclick="submitAnswer()">Submit Answers</a></button> 
+
+        <button><a onclick="return show('Page3','Page2');">Done</a></button>
+
+
       </div>
     </div>
 
     <div id="Page3" style="display:none">Content of page 3
       
       <div id="wrapper">
-        <h2>NICE JOB</h2>
+
+        <div>
+        <h3>Thanks for playing!</h3>
         <br>
+        <h4>Your score:</h4>
+        </div>
+        <div id="wins"></div>
+        <br>
+        <h4>Incorrect answers:</h4>
+        <br>
+        <h4>Unanswered questions:</h4>
         <br>
         <br>
         <div id="information"></div>
-        <div id="wins"></div>
       </div>
     </div>
 

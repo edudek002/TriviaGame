@@ -6,9 +6,6 @@
 window.onload =  function() {
 
   $("#start").on("click", stopwatch.start);
-  //$("#lap").on("click", stopwatch.recordLap);
-  //$("#stop").on("click", stopwatch.stop);
-  //$("#reset").on("click", stopwatch.reset);
 };
 
 //  Variable that holds setInterval that runs the stopwatch
@@ -16,18 +13,6 @@ var intervalId;
 //Variable that prevents the clock from being sped up unnecessarily
 var clockRunning = false;
 var seconds=0;
-
-/*
-setTimeout(timeUp, 1000 * 20);
-function timeUp() {
-
-  // in the element with an id of time-left add an h2 saying Time's Up!
-  // console log done
-  console.log("done");
-  $("#information").text("<h2>Time's Up!</h2>");
-  console.log("time is up");
-}
-*/
 
 
 // STOPWATCH OBJECT
@@ -66,7 +51,7 @@ var stopwatch = {
     }
     else {
       stopwatch.stop();
-      $("#information").text("Time Up!");
+      $("#information").text("Time is Up!");
     }
   },
 }; //END OF OBJECT
@@ -76,90 +61,82 @@ var stopwatch = {
 var radios = "";
 var val= "";
 var win=0;
+var  questions = [
+  {
+    "question":"What is my favorite color?",
+    "guesses":["Yellow","Green","Blue","Purple"],
+    "answer":"Blue"
+  },
+  {
+    "question":"What is my favorite season?",
+    "guesses":["spring","summer","fall","winter"],
+    "answer":"summer"
+  }];
 
-var submitAnswer = function() {
+  $("#question1").text(questions[0].question);
+  $("#question2").text(questions[1].question);
 
-  var radios = document.getElementsByName('choice');
+  $("#true1").text(questions[0].answer);
+  $("#true2").text(questions[1].answer);
 
-  for (var i = 0, length = radios.length; i < length; i++) {
-      if (radios[i].checked) {
-         val = radios[i].value; 
-         break;
-       }
-  }
-  
+/*
+  $( document.body ).click(function() {
+  $( "form" ).each(function( i ) {
+    if ( this.style.color !== "blue" ) {
+      this.style.color = "blue";
+    } else {
+      this.style.color = "";
+    }
+  });
+});
 
-  if ( val == "Answer1" ) {
-    console.log('Answer is correct !');
-    win++;
-    stopwatch.stop();
-    
-    //delay 1 second
-    var windowTimeout = setTimeout(function(){
-        
-        $("#information").text("Your answer is correct");
+*/
 
-    $("#wins").text("Wins = " + win);
-      }, 1000);
-  } 
-  else {
-    console.log('Answer is wrong');
-    win;
-    stopwatch.stop();
-    
-    //delay 1 second
-    var windowTimeout = setTimeout(function(){
-        
-        $("#information").text("Your answer is incorrect");
-
-
-      }, 1000);
-  }
-
-};
 
 
 
 var submitAnswer = function() {
 
+  //Allows to use multiple choice answer
+
   var radios = document.getElementsByName('choice');
 
-  for (var i = 0, length = radios.length; i < length; i++) {
-      if (radios[i].checked) {
-         val = radios[i].value; 
-         break;
-       }
+  for (var i = 0; i < 8; i++) {
+    if (radios[i].checked) {
+      val = radios[i].value;
+      break;      
+    }
   }
   
-
-  if ( val == "Answer2" ) {
+  if ( val == "1") {
     console.log('Answer is correct !');
-    win++;
-    stopwatch.stop();
-    
-    //delay 1 second
-    var windowTimeout = setTimeout(function(){
-        
-        $("#information").text("Your answer is correct");
-
+    win++;        
+    $("#information").text("Your answer is correct");
     $("#wins").text("Wins = " + win);
-      }, 1000);
-  } 
-  else {
-    console.log('Answer is wrong');
-    win;
-    stopwatch.stop();
-    
-    //delay 1 second
-    var windowTimeout = setTimeout(function(){
-        
-        $("#information").text("Your answer is incorrect");
-
-
-      }, 1000);
   }
 
+  else if ( val == "6") {
+    console.log('Answer is correct !');
+    win++;        
+    $("#information").text("Your answer is correct");
+    $("#wins").text("Wins = " + win);    
+  }
+
+  else {
+    console.log('Answer is wrong');
+    win;        
+    $("#information").text("Your answer is incorrect");
+  }
 };
+
+
+
+
+  
+
+
+
+
 
 
 
