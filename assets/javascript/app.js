@@ -7,7 +7,7 @@ window.onload =  function() {
 
   $("#start").on("click", stopwatch.start);
   //$("#lap").on("click", stopwatch.recordLap);
-  $("#stop").on("click", stopwatch.stop);
+  //$("#stop").on("click", stopwatch.stop);
   //$("#reset").on("click", stopwatch.reset);
 };
 
@@ -16,6 +16,19 @@ var intervalId;
 //Variable that prevents the clock from being sped up unnecessarily
 var clockRunning = false;
 var seconds=0;
+
+/*
+setTimeout(timeUp, 1000 * 20);
+function timeUp() {
+
+  // in the element with an id of time-left add an h2 saying Time's Up!
+  // console log done
+  console.log("done");
+  $("#information").text("<h2>Time's Up!</h2>");
+  console.log("time is up");
+}
+*/
+
 
 // STOPWATCH OBJECT
 var stopwatch = {
@@ -53,7 +66,7 @@ var stopwatch = {
     }
     else {
       stopwatch.stop();
-      $("#information").text("Time out");
+      $("#information").text("Time Up!");
     }
   },
 }; //END OF OBJECT
@@ -104,6 +117,50 @@ var submitAnswer = function() {
   }
 
 };
+
+
+
+var submitAnswer = function() {
+
+  var radios = document.getElementsByName('choice');
+
+  for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+         val = radios[i].value; 
+         break;
+       }
+  }
+  
+
+  if ( val == "Answer2" ) {
+    console.log('Answer is correct !');
+    win++;
+    stopwatch.stop();
+    
+    //delay 1 second
+    var windowTimeout = setTimeout(function(){
+        
+        $("#information").text("Your answer is correct");
+
+    $("#wins").text("Wins = " + win);
+      }, 1000);
+  } 
+  else {
+    console.log('Answer is wrong');
+    win;
+    stopwatch.stop();
+    
+    //delay 1 second
+    var windowTimeout = setTimeout(function(){
+        
+        $("#information").text("Your answer is incorrect");
+
+
+      }, 1000);
+  }
+
+};
+
 
 
 
