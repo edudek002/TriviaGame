@@ -66,14 +66,11 @@ var  questions = [
     "guesses":["Myrtle Beach, SC","Virginia Beach, VA","Canaveral Seashore, FL","Cumberland Island, GA"],
     "answer":"Virginia Beach, VA"
   },
-
-
   {
     "question":"What is the highest mountain in Europe?",
     "guesses":["Mont Blanc, France","Matterhorn, Switzerland","Mount Olympus, Cyprus","Grossglockner,Austria"],
     "answer":"Mont Blanc, France"
   },
-
   {
 
   "question":"What is the longest river in the world?",
@@ -114,35 +111,25 @@ var  questions = [
   $("#Answer15").text(questions[1].guesses[2]);
   $("#Answer16").text(questions[1].guesses[3]);
 
+  
 
 
-  console.log("Anwer1 " + questions[0].guesses[0]);
 
-  console.log("Lenght of Answer Array" + questions[0].guesses.length);
-
+  //console.log("Lenght of Answer Array" + questions[0].guesses.length);
 
 
   $(document).ready(function() {
 
-      
-      
-
-
-      // MAJOR TASK #1: DYNAMICALLY CREATE BUTTONS
+      // DYNAMICALLY CREATE BUTTONS
       // =================================================================================
 
-      // 1. Create a for-loop to iterate through the letters array.
 
       for (var i = 0; i < questions[0].guesses.length; i++) {
 
         var buttonL = $("<button>");
-
         buttonL.addClass("guesses");
-
         buttonL.attr("data-guesses", questions[0].guesses[i]);
-
         buttonL.text(questions[0].guesses[i]);
-
         $("#guessesLake").append(buttonL);
 
       };
@@ -151,13 +138,9 @@ var  questions = [
       for (var i = 0; i < questions[1].guesses.length; i++) {
 
         var buttonL = $("<button>");
-
         buttonL.addClass("guesses");
-
         buttonL.attr("data-guesses", questions[1].guesses[i]);
-
         buttonL.text(questions[1].guesses[i]);
-
         $("#guessesBeach").append(buttonL);
 
       };
@@ -165,13 +148,9 @@ var  questions = [
       for (var i = 0; i < questions[2].guesses.length; i++) {
 
         var buttonL = $("<button>");
-
         buttonL.addClass("guesses");
-
         buttonL.attr("data-guesses", questions[2].guesses[i]);
-
         buttonL.text(questions[2].guesses[i]);
-
         $("#guessesMountain").append(buttonL);
 
       };
@@ -179,20 +158,85 @@ var  questions = [
       for (var i = 0; i < questions[3].guesses.length; i++) {
 
         var buttonL = $("<button>");
-
         buttonL.addClass("guesses");
-
         buttonL.attr("data-guesses", questions[3].guesses[i]);
-
         buttonL.text(questions[3].guesses[i]);
-
         $("#guessesRiver").append(buttonL);
 
       };
 
     });
 
-      /*
+
+
+
+    //var submitAnswer = function() {
+
+  //Allows to use multiple choice answer
+
+  //var radios = document.getElementsByName('choice').forEach(el);
+  /*
+  radios.forEach(function(radio) {
+    if (radio.checked)
+      console.log(el);
+      val = radios[i].value;
+  });
+
+  */
+
+var submitAnswer = function() {
+
+  for (var i = 0; i <questions[0].guesses.length; i++) {
+
+    //$("#question1").on("click", questions[0].guesses[i]);
+
+    //if (questions[0].guesses[i] == questions[0].answer) {
+
+      if (i==1) {
+
+      console.log('Answer is correct !');
+           
+    }
+
+    else{
+
+      console.log('Answer is correct !');
+
+    }
+  };
+
+}
+
+submitAnswer();
+
+
+/*  
+ 
+  if ( val == "1") {
+    console.log('Answer is correct !');
+    win++;        
+    $("#information").text("Your answer is correct");
+    $("#wins").text("Wins = " + win);
+  }
+
+  else if ( val == "6") {
+    console.log('Answer is correct !');
+    win++;        
+    $("#information").text("Your answer is correct");
+    $("#wins").text("Wins = " + win);    
+  }
+
+  else {
+    console.log('Answer is wrong');
+    win;        
+    $("#information").text("Your answer is incorrect");
+  }
+};
+
+
+*/
+
+  /*
 
       // Be sure to test that your code works for this major task, before proceeding to the next one!
 
@@ -242,31 +286,7 @@ var  questions = [
 
 /*
 
-  function renderButtons() {
-
-        $("#guessesLake").empty();
-
-        console.log(questions[0].guesses[1]);
-
-        for (var i = 0; i < questions.guesses.length; i++) {
-
-        console.log(questions[0].guesses[i]);
-
-        var buttonL = $("<button>");
-
-        buttonL.attr("data-name", questions.guesses[i]);
-
-        buttonL.text(questions.guesses[i]);
-
-        $("#guessesLake").append(buttonL);
-
-        }
-      }
-
-      renderButtons();
-
-
-      /*
+  
 
   var TriviaGame =
 . . .
@@ -308,13 +328,7 @@ __________
 QUESTION 34 week3
 _______________-
 
-var button = $("<button>");
 
-        button.attr("data-name", movies[i]);
-
-        button.text(movies[i]);
-
-        $("#movies-view").append(button);
 
 
 */
