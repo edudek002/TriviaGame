@@ -1,7 +1,7 @@
-body, card-body{ /* Visual */
+body, card-body{
+
   background: #f5f5dc;
 }
-
 
 button {
 
@@ -26,7 +26,6 @@ p {
     color: navy;
     z-index: 1;
 }
-
 
 #start { /* Typography */
 
@@ -103,7 +102,6 @@ p {
   z-index: 1;
 }
 
-
 .numberDisplay {
 
   color: red;
@@ -154,9 +152,7 @@ p {
   text-align: center;
   background: lightblue;
   z-index: 1;
-
 }
-
 
 #buttons { /* Typography */
 
@@ -164,7 +160,7 @@ p {
   z-index: 1;
 }
 
-#information, #wins {
+#information {
 
   font-size: 30px;
   width: 550px;
@@ -172,14 +168,6 @@ p {
   color: navy;
   text-align: center;
   z-index: 1;
-
-
 }
 
 
-form {
-  
-  margin-left: 50px;
-  width: 800px;
-  height: 50px;
-}
