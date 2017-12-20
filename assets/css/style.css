@@ -1,31 +1,167 @@
-body { /* Visual */
+body, card-body{ /* Visual */
   background: #f5f5dc;
 }
 
+
+button {
+
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  z-index: 1;
+}
+
+.background {
+
+    position: absolute;
+    top: 50px;
+    left: 270px;
+}
+
+
+p {
+    position: relative;
+    top: 130px;
+    text-align: center;
+    color: navy;
+    z-index: 1;
+}
+
+
+#start { /* Typography */
+
+  position: absolute;
+  text-align: center;
+  font-size: 24px;
+  color: navy;
+  background: #ffdb4d;
+  left: 900px;
+  top: 810px;
+  width: 100px;
+  height:50px;
+  z-index: 1;
+}
+
+
+#results {
+
+  position: absolute;
+  text-align: center;
+  font-size: 24px;
+  color: navy;
+  background: #ffdb4d;
+  left: 750px;
+  top: 600px;
+  width: 400px;
+  height:300px;
+  z-index: 1;
+
+}
+
+.lake {
+
+  position: absolute;
+  text-align: center;
+  font-size: 24px;
+  color: navy;
+  left: 370px;
+  top: 150px;
+  z-index: 1;
+}
+
+.beach {
+
+  position: absolute;
+  text-align: center;
+  font-size: 24px;
+  color: navy;
+  left: 1239px;
+  top: 530px;
+  z-index: 1;
+}
+
+.mountain {
+
+  position: absolute;
+  text-align: center;
+  font-size: 24px;
+  color: navy;
+  top: 530px;
+  left: 1230px;
+  top: 150px;
+  z-index: 1;
+}
+
+.river {
+
+  position: absolute;
+  text-align: center;
+  font-size: 24px;
+  color: navy;
+  left: 370px;
+  top: 530px;
+  z-index: 1;
+}
+
+
+.numberDisplay {
+
+  color: red;
+  font-size: 58px;
+  z-index: 1;
+}
+
 #display {
+
+  position: relative;
+  top: 550px;
+  left:800px;
   font-family: monospace;
   font-size: 20px;
+  width: 300px;
+  height: 40px;
+  color: navy;
+  text-align: center;
+  background: lightblue;
+  z-index: 1;
+}
+
+#question1, #question2, #question3, #question4 {
+
+  position: relative;
+  top: 150px;
+  font-family: monospace;
+  font-weight:bold
+  font-size: 48px;
+  width: 100%;
+  height: 40px;
+  color: #ffcc00;
+  text-align: center;
+  z-index: 1;
+}
+
+.guesses {
+
+  position: relative;
+  top: 400px;
+  left: 750px;
+  font-family: monospace;
+  font-weight:bold
+  font-size: 48px;
   width: 400px;
   height: 40px;
   color: navy;
-
-  /* Typography */
   text-align: center;
+  background: lightblue;
+  z-index: 1;
 
-  /* Visual */
-  background: gray;
 }
 
-#wrapper {
-  /* Box-model */
-  width: 600px;
-
-  /* Positioning */
-  margin: 50px auto 0;
-}
 
 #buttons { /* Typography */
+
   text-align: center;
+  z-index: 1;
 }
 
 #information, #wins {
@@ -34,19 +170,12 @@ body { /* Visual */
   width: 550px;
   height: 50px;
   color: navy;
-
-  /* Typography */
   text-align: center;
+  z-index: 1;
 
 
 }
 
-button {
-  width: 100px;
-
-  /* Box-model */
-  height: 50px;
-}
 
 form {
   

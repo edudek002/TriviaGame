@@ -5,101 +5,193 @@
   <head>
 
     <meta charset="UTF-8">
-    <title>Stopwatch</title>
+    <title>Trivia Game</title>
 
-    <!-- Our CSS style sheet -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <script>
-      function show(shown, hidden) {
-                document.getElementById(shown).style.display='block';
-                document.getElementById(hidden).style.display='none';
-                return false;
-            }
-    </script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
-  </head>
+    <link rel="stylesheet" href="../assets/css/style.css"> 
+
+  </head> 
 
   <body>
 
     <div id="Page1">
-      <p>A VERY AWESOME GAME</p>
-      <br>
-      <br>
-      <div id="buttons">
-        <button id="start"<a onclick="return show('Page2','Page1');">START</a></button>
-      </div>
-    </div>
 
+      <div class="row">
 
+        <div class="column card-body">
 
-    <div id="Page2" style="display:none">Content of page 2
-      
-      <div id="wrapper">
-        <p>A VERY AWESOME GAME</p>
+          <h1><p>Geography Trivia</p></h1>
+          
+          <div class="background"> 
+            <img src="../assets/images/wildflowers.jpg" alt="background picture" width="1380" height="864">
+          </div>
 
-      
-        <div id="display"></div>
-        <br>
+          <div class="lake"> 
+            <img src="../assets/images/lake.jpg" alt="lake picture" width="300" height="300">
+          </div>
 
-        
+          <div class="beach"> 
+            <img src="../assets/images/beach.jpg" alt="beach picture" width="300" height="300">
+          </div>
 
+          <div class="river"> 
+            <img src="../assets/images/river.jpg" alt="river picture" width="300" height="300">
+          </div>
 
-        <h2 id="question1"></h2>
-      
-        <h2 id="true1"></h2>
+          <div class="mountain"> 
+            <img src="../assets/images/mountain.jpg" alt="mountain picture" width="300" height="300">
+          </div> 
 
-        <form >
-          <input type="radio" name="choice" value="1"> Answer1
-          <input type="radio" name="choice" value="2"> Answer2
-          <input type="radio" name="choice" value="3"> Answer3
-          <input type="radio" name="choice" value="4"> Answer4
-        </form> 
-  
-
-        <h2 id="question2"></h2>
-
-        <h2 id="true2"></h2>
-      
-        <form >
-          <input type="radio" name="choice" value="5"> Answer1
-          <input type="radio" name="choice" value="6"> Answer2
-          <input type="radio" name="choice" value="7"> Answer3
-          <input type="radio" name="choice" value="8"> Answer4
-          <!--<input type="submit" value="submit">-->
-        </form>
-
-        <!--
-       
-        <button onclick="submitAnswer()">Submit Answers</a></button> -->
-
-        <div id="information"></div>
-        <div id="wins"> = wins</div>
-
-        <button onclick="submitAnswer()">Submit Answers</a></button> 
-
-        <button><a onclick="return show('Page3','Page2');">Done</a></button>
-
-
-      </div>
-    </div>
-
-    <div id="Page3" style="display:none">Content of page 3
-      
-      <div id="wrapper">
-
-        <div>
-        <h3>Thanks for playing!</h3>
-        <br>
-        <h4>Your score:</h4>
+          <button id="start"<a onclick="return show('Page2','Page1');">START</a></button>
+ 
         </div>
-        <div id="wins"></div>
-        <br>
-        <h4>Incorrect answers:</h4>
-        <br>
-        <h4>Unanswered questions:</h4>
-        <br>
-        <br>
-        <div id="information"></div>
+
+      </div>
+
+    </div>
+
+
+
+    <div id="Page2" style="display:none">
+
+      <div class="row">
+
+        <div class="column card-body">
+
+          <h1><p>Geography Trivia</p></h1>
+          
+          <div class="background"> 
+            <img src="../assets/images/lake1.jpg" alt="lake picture" width="1380" height="864">
+          </div>
+          <h1 id="question1"></h1>
+
+          <button><h3 id="guessesLake"></h3></button>
+          <div id="display"></div>
+          <br>
+          <div id="information"></div>
+          <div id="wins"> = wins</div>
+
+          <button onclick="submitAnswer()">Submit Answers</a></button> 
+
+          <button id="start"<a onclick="return show('Page3','Page2');">START</a></button>
+ 
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="Page3" style="display:none">
+
+      <div class="row">
+
+        <div class="column card-body">
+
+          <h1><p>Geography Trivia</p></h1>
+
+          <div class="background"> 
+            <img src="../assets/images/beach1.jpg" alt="beach picture" width="1380" height="864">
+          </div>
+          <h1 id="question2"></h1>
+          <button><h3 id="guessesBeach"></h3></button>
+          <div id="display"></div>
+          <br>
+          <div id="information"></div>
+          <div id="wins"> = wins</div>
+
+          <button onclick="submitAnswer()">Submit Answers</a></button> 
+
+          <button id="start"<a onclick="return show('Page4','Page3');">START</a></button>
+ 
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="Page4" style="display:none">
+
+      <div class="row">
+
+        <div class="column card-body">
+
+          <h1><p>Geography Trivia</p></h1>
+
+          <div class="background"> 
+            <img src="../assets/images/mountain1.jpg" alt="mountain picture" width="1380" height="864">
+          </div>
+          <h1 id="question3"></h1>
+          <button><h3 id="guessesMountain"></h3></button>
+          <div id="display"></div>
+          <br>
+          
+          <div id="information"></div>
+          <div id="wins"> = wins</div>
+
+          <button onclick="submitAnswer()">Submit Answers</a></button> 
+
+          <button id="start"<a onclick="return show('Page5','Page4');">START</a></button>
+ 
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="Page5" style="display:none">
+
+      <div class="row">
+
+        <div class="column card-body">
+
+          <h1><p>Geography Trivia</p></h1>
+
+          <div class="background"> 
+            <img src="../assets/images/river1.jpg" alt="river picture" width="1380" height="864">
+          </div>
+          <h1 id="question4"></h1>
+          <button><h3 id="guessesRiver"></h3></button>
+          <div id="display"></div>
+          <br>
+          <div id="information"></div>
+          <div id="wins"> = wins</div>
+
+          <button onclick="submitAnswer()">Submit Answers</a></button> 
+
+          <button id="start"<a onclick="return show('Page6','Page5');">START</a></button>
+ 
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div id="Page6" style="display:none">
+
+      <div class="row">
+
+        <div class="column card-body">
+
+          <h1><p>Geography Trivia</p></h1>
+          
+          <div class="background"> 
+            <img src="../assets/images/wildflowers.jpg" alt="background picture" width="1380" height="864">
+          </div>
+
+          <div id="results">
+
+            <h2>Thanks for playing!</h2>
+            <br>
+            <h4>Your score:</h4>
+            <div id="wins"></div>
+            <h4>Incorrect answers:</h4>
+            <h4>Unanswered questions:</h4>
+            <div id="information"></div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -108,6 +200,17 @@
 
     <!-- Script -->
     <script type="text/javascript" src="../assets/javascript/app.js"></script>
+
+    <script>
+
+    function show(shown, hidden) {
+                document.getElementById(shown).style.display='block';
+                document.getElementById(hidden).style.display='none';
+                return false;
+            }
+
+    </script>
+
 
   </body>
 
