@@ -11,6 +11,7 @@ var intervalId;
 //Variable that prevents the clock from being sped up unnecessarily
 var clockRunning = false;
 var seconds=0;
+var value ="";
 
 
 // STOPWATCH OBJECT
@@ -40,11 +41,11 @@ var stopwatch = {
 
     // Increment time by 1
     stopwatch.time++;
-    seconds = 30 - stopwatch.time;
+    seconds = 5 - stopwatch.time;
     console.log(seconds); 
     $("#display").text("Remaining time: " + seconds + " seconds.");
 
-    if (stopwatch.time <30){
+    if (stopwatch.time <5){
       console.log("Please select choice answer");
     }
     else {
@@ -118,7 +119,7 @@ var  questions = [
   //console.log("Lenght of Answer Array" + questions[0].guesses.length);
 
 
-  $(document).ready(function() {
+  //$(document).ready(function() {
 
       // DYNAMICALLY CREATE BUTTONS
       // =================================================================================
@@ -165,7 +166,7 @@ var  questions = [
 
       };
 
-    });
+    //});
 
 
 
@@ -183,6 +184,8 @@ var  questions = [
   });
 
   */
+
+  /*
 
 var submitAnswer = function() {
 
@@ -206,8 +209,106 @@ var submitAnswer = function() {
   };
 
 }
+*/
 
-submitAnswer();
+//submitAnswer();
+
+//function registerEventListener() {
+
+  console.log(questions[0].guesses[1]);
+
+
+  function registerEventListener() {
+
+
+    $(".guesses").on("click", function() {
+
+    value = ($(this).attr("data-guesses"));
+
+    console.log("After click value = " + value);
+
+    });
+
+  };
+
+  registerEventListener();
+/*
+
+      if (questions[0].guesses[0]!=="Red Lake"){alert('Answer is WRONG !');}
+
+      else if (questions[0].guesses[1]=="Red Lake") {alert('Answer is correct !');}
+
+      else if (questions[0].guesses[0]!=="Red Lake"){alert('Answer is WRONG !');}
+
+      else if (questions[0].guesses[0]!=="Red Lake"){alert('Answer is WRONG !');}
+
+        
+});
+
+        //win++;
+        //$("#wins").text(win);
+           
+      /*
+      else if(questions[0].guesses[i]!=="Red Lake") {
+
+      console.log('Answer is WRONG !');
+      alert('Answer is WRONG !');
+
+      }
+
+    };
+
+  });
+
+//}
+
+//registerEventListener();
+  /*
+  gemValue = ($(this).attr("data-gemvalue"));
+
+  console.log("After click gemvalue = " + gemValue);
+  alert("you guessed: " + gemValue);
+  gemValue = parseInt(gemValue);
+  counter += gemValue;
+
+  $("#total-number").text(counter);
+
+  
+
+  if (counter === randomLg) {
+    alert("You win!");
+    win++;
+    $("#wins").text(win);
+    finalWin=win-loss;
+    if (finalWin>=0){
+      $("#finalWin").text(finalWin);
+    }
+    else {
+      $("#finalWin").text(0);
+    }
+    //start new game
+    startGame();
+    roundComplete();
+  }
+  else if (counter >= randomLg) {
+    alert("You lose!!");
+    loss++; 
+    $("#losses").text(loss);
+    finalWin=win-loss;
+    if (finalWin>=0){
+      $("#finalWin").text(finalWin);
+    }
+    else {
+      $("#finalWin").text(0);
+    }
+    //start new game
+    startGame();
+    roundComplete();
+  }
+
+  });
+}
+
 
 
 /*  
