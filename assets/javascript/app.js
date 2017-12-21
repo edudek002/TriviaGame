@@ -10,12 +10,12 @@ window.onload =  function() {
 var intervalId;
 //Variable that prevents the clock from being sped up unnecessarily
 var clockRunning = false;
-var seconds=10;
+var seconds=0;
 var value ="";
 var win=0;
 var loss=0;
 var notAnswered =0;
-var delay =0; //used in windowTimeout
+var delay =0;         //used in the windowTimeout
 
 // SHOW FUNCION TO DISPLAY PAGES
 //---------------------------------------------------------------------
@@ -36,7 +36,7 @@ var stopwatch = {
 
   reset: function() {
 
-    delay = 2 //delay in windowsTimeout
+    delay = 2 //delay caused by windowsTimeout
 
     stopwatch.time = -delay;
     stopwatch.lap = 1;
@@ -174,12 +174,14 @@ for (var i = 0; i < questions[3].guesses.length; i++) {
 
 function eventListenerLake() {
 
-  $(".guesses").on("click", function() {
+  /*if (stopwatch.time>0) {
+     worked on moving to the next page when Time Up! shows up*/
 
-    value = ($(this).attr("data-guesses"));
+    $(".guesses").on("click", function() {
+
+     value = ($(this).attr("data-guesses"));
     //console.log("After click value = " + value);
     
-
       if ( value=== questions[0].answer) {
       
         win=0;
@@ -211,19 +213,19 @@ function eventListenerLake() {
         stopwatch.reset();
         stopwatch.start();
       }
-      /* -----worked on oving to page 3 when Time is Up
-      else {
 
-      console.log(stopwatch.time + " seconds left");
-      notAnswered++;
-      $("#notA").text(notAnswered);
-      show("Page3","Page2");
-      stopwatch.stop();
-      stopwatch.reset();
-      stopwatch.start();
-      }
-      */ 
- 
+      /* worked on moving to the next page when Time Up! shows u
+  else {
+    alert("Time is up!");
+    notAnswered++;
+    $("#notA").text(notAnswered);
+    show("Page3","Page2");
+    stopwatch.stop();
+    stopwatch.reset();
+    stopwatch.start();
+        
+  }*/
+
   });
 };
 
@@ -236,37 +238,57 @@ function eventListenerBeach() {
 
     value = ($(this).attr("data-guesses"));
     //console.log("After click value = " + value);
+    console.log("check time "+ stopwatch.time);
 
-    if ( value=== questions[1].answer) {
-    
-      win++;
-      $("#wins").text(win);
+    /*if (stopwatch.time!=-2) 
+    { worked on moving to the next page when Time Up! shows up*/
+
+      if ( value=== questions[1].answer) {
       
-      show('Page3a','Page3');
-      var windowTimeout = setTimeout(function(){
-        console.log("Alert #1");
-        show('Page4','Page3a');
-      }, 2000);
-      stopwatch.stop();
-      stopwatch.reset();
-      stopwatch.start();
+        win++;
+        $("#wins").text(win);
+        
+        show('Page3a','Page3');
+        var windowTimeout = setTimeout(function(){
+          console.log("Alert #1");
+          show('Page4','Page3a');
+        }, 2000);
+        stopwatch.stop();
+        stopwatch.reset();
+        stopwatch.start();
+      }
+
+      else if ( value=== questions[1].guesses[0]||
+        value=== questions[1].guesses[2] ||
+        value=== questions[1].guesses[3]) {
+
+        loss++;
+        $("#losses").text(loss);
+        show('Page3b','Page3');
+        var windowTimeout = setTimeout(function(){
+          console.log("Alert #1");
+          show('Page4','Page3b'); 
+        }, 2000);
+        stopwatch.stop();
+        stopwatch.reset();
+        stopwatch.start(); 
+      }
+    /*
     }
 
-    else if ( value=== questions[1].guesses[0]||
-      value=== questions[1].guesses[2] ||
-      value=== questions[1].guesses[3]) {
+    else {
 
-      loss++;
-      $("#losses").text(loss);
-      show('Page3b','Page3');
-      var windowTimeout = setTimeout(function(){
-        console.log("Alert #1");
-        show('Page4','Page3b'); 
-      }, 2000);
-      stopwatch.stop();
-      stopwatch.reset();
-      stopwatch.start(); 
+    alert("Time is Up");
+    notAnswered++;
+    $("#notA").text(notAnswered);
+    show("Page4","Page");
+    stopwatch.stop();
+    stopwatch.reset();
+    stopwatch.start();
+        
     }
+    */
+
   });
 };
 

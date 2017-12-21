@@ -19,7 +19,7 @@ button {
     left: 270px;
 }
 
-
+/*text for a Title*/
 p {
     position: relative;
     top: 130px;
@@ -27,6 +27,8 @@ p {
     color: navy;
     z-index: 1;
 }
+
+/* start button*/
 
 .start { 
 
@@ -43,19 +45,7 @@ p {
 }
 
 
-#results {
-
-  position: absolute;
-  text-align: center;
-  font-size: 24px;
-  color: navy;
-  background: #ffdb4d;
-  left: 750px;
-  top: 400px;
-  width: 400px;
-  height:300px;
-  z-index: 1;
-}
+/* reset button*/
 
 .reset{
 
@@ -70,6 +60,24 @@ p {
   height:50px;
   z-index: 1;
 }
+
+/*results information on the last page*/
+
+#results {
+
+  position: absolute;
+  text-align: center;
+  font-size: 24px;
+  color: navy;
+  background: #ffdb4d;
+  left: 750px;
+  top: 400px;
+  width: 400px;
+  height:300px;
+  z-index: 1;
+}
+
+/* location of pictures on the first page*/
 
 .lake {
 
@@ -116,12 +124,7 @@ p {
   z-index: 1;
 }
 
-.numberDisplay {
-
-  color: red;
-  font-size: 58px;
-  z-index: 1;
-}
+/* timeline*/
 
 #display,  #display1, #display2, #display3, #display4{
 
@@ -138,6 +141,8 @@ p {
   z-index: 1;
 }
 
+/*location of questions*/
+
 #question1, #question2, #question3, #question4 {
 
   position: relative;
@@ -151,6 +156,8 @@ p {
   text-align: center;
   z-index: 1;
 }
+
+/* guesses buttons*/
 
 .guesses {
 
@@ -168,6 +175,7 @@ p {
   z-index: 1;
 }
 
+/*correct and incorrect answers */
 
 #informationA {
 
