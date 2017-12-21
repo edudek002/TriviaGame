@@ -171,13 +171,18 @@ function registerEventListener() {
     console.log("After click value = " + value);
 
     if ( value=== questions[0].answer) {
-      alert("You win!");
+      //alert("You win!");
       win++;
       $("#wins").text(win);
       stopwatch.stop();
-      stopwatch.start();
-      show('Page3','Page2'); 
+      show('Page2a','Page2');
+      //wait
+      //show('Page3','Page2a');
+      //stopwatch.start();
+
       }
+
+      /*
 
     else if ( value=== questions[1].answer) {
       alert("You win!");
@@ -188,20 +193,20 @@ function registerEventListener() {
       show('Page4','Page3'); 
       }
 
+      */
 
       else {
 
-
-
-
-
-
-      alert("You lose!!");
+      //alert("You lose!!");
       loss++;
       $("#losses").text(loss);
       stopwatch.stop();
-      stopwatch.start();
-      show('Page3','Page2');
+      show('Page2b','Page2');
+      
+
+      //wait
+      //show('Page3','Page2b');
+      //stopwatch.start();
     }
   });
 };
