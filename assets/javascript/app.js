@@ -15,6 +15,7 @@ var value ="";
 var win=0;
 var loss=0;
 var notAnswered =0;
+var delay =0; //used in windowTimeout
 
 // SHOW FUNCION TO DISPLAY PAGES
 //---------------------------------------------------------------------
@@ -35,7 +36,9 @@ var stopwatch = {
 
   reset: function() {
 
-    stopwatch.time = 0;
+    delay = 2 //delay in windowsTimeout
+
+    stopwatch.time = -delay;
     stopwatch.lap = 1;
     $("#display1").text("Remaining time: 10 seconds.");
     $("#display2").text("Remaining time: 10 seconds.");
@@ -182,13 +185,12 @@ function eventListenerLake() {
         win=0;
         win++;
         $("#wins").text(win);
-        
+        stopwatch.stop();
         show('Page2a','Page2');
         var windowTimeout = setTimeout(function(){
           console.log("Alert #1");
           show('Page3','Page2a');
         }, 2000);
-        stopwatch.stop();
         stopwatch.reset();
         stopwatch.start();
       }
@@ -200,12 +202,12 @@ function eventListenerLake() {
         loss=0;
         loss++;
         $("#losses").text(loss);
+        stopwatch.stop();
         show('Page2b','Page2');
         var windowTimeout = setTimeout(function(){
           console.log("Alert #1");
           show('Page3','Page2b'); 
         }, 2000);
-        stopwatch.stop();
         stopwatch.reset();
         stopwatch.start();
       }
