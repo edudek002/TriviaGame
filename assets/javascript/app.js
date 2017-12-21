@@ -10,11 +10,11 @@ window.onload =  function() {
 var intervalId;
 //Variable that prevents the clock from being sped up unnecessarily
 var clockRunning = false;
-var seconds=0;
+var seconds=10;
 var value ="";
 var win=0;
 var loss=0;
-var finalWin =0;
+var notAnswered =0;
 
 // SHOW FUNCION TO DISPLAY PAGES
 //---------------------------------------------------------------------
@@ -32,6 +32,14 @@ var stopwatch = {
 
   time: 0,
   lap: 1,
+
+  reset: function() {
+
+    stopwatch.time = 0;
+    stopwatch.lap = 1;
+    $("#display").text("Remaining time: 10 seconds.");
+
+  },
   
   start: function() {
 
@@ -59,8 +67,8 @@ var stopwatch = {
     $("#display").text("Remaining time: " + seconds + " seconds.");
 
     if (stopwatch.time <10){
-      //console.log("Please select choice answer");
     }
+
     else {
       stopwatch.stop();
       $("#information").text("Time is Up!");
@@ -163,55 +171,218 @@ for (var i = 0; i < questions[3].guesses.length; i++) {
 //console.log(questions[0].guesses[1]);
 //console.log("right answer: "+ questions[0].answer);
 
-function registerEventListener() {
+function eventListenerLake() {
 
   $(".guesses").on("click", function() {
 
     value = ($(this).attr("data-guesses"));
     console.log("After click value = " + value);
 
-    if ( value=== questions[0].answer) {
-      //alert("You win!");
-      win++;
-      $("#wins").text(win);
-      stopwatch.stop();
-      show('Page2a','Page2');
-      //wait
-      //show('Page3','Page2a');
-      //stopwatch.start();
-
+      if ( value=== questions[0].answer) {
+      
+        win++;
+        $("#wins").text(win);
+        
+        show('Page2a','Page2');
+        var windowTimeout = setTimeout(function(){
+          console.log("Alert #1");
+          show('Page3','Page2a');
+        }, 2000);
+        stopwatch.stop();
+        stopwatch.reset();
+        stopwatch.start();
+        //stopwatch.time=2000;
+        $("#display").append(stopwatch.start());  
       }
 
-      /*
+      else if ( value=== questions[0].guesses[0]||
+        value=== questions[0].guesses[2] ||
+        value=== questions[0].guesses[3]) {
 
-    else if ( value=== questions[1].answer) {
-      alert("You win!");
-      win++;
-      $("#wins").text(win);
+        loss++;
+        $("#losses").text(loss);
+        show('Page2b','Page2');
+        var windowTimeout = setTimeout(function(){
+          console.log("Alert #1");
+          show('Page3','Page2b'); 
+        }, 2000);
+        stopwatch.stop();
+        stopwatch.reset();
+        stopwatch.start();
+        //stopwatch.time=2000;
+        $("#display").append(stopwatch.start());  
+      }
+    
+ 
+  });
+};
+
+//if (10>stopwatch.time>3) {
+
+  console.log(stopwatch.time + " seconds left");
+  eventListenerLake();
+/*
+}
+else {
+
+      console.log(stopwatch.time + " seconds left");
+      notAnswered++;
+      $("#notA").text(notAnswered);
+      show("Page2c","Page2");
+      var windowTimeout = setTimeout(function(){
+          console.log("Alert #1");
+          show("Page3","Page2c"); 
+        }, 2000);
       stopwatch.stop();
+      stopwatch.reset();
       stopwatch.start();
-      show('Page4','Page3'); 
-      }
+      //stopwatch.time=2000;
+      $("#display").append(stopwatch.start());
+    }
 
-      */
+*/
 
-      else {
 
-      //alert("You lose!!");
+
+function eventListenerBeach() {
+
+  $(".guesses").on("click", function() {
+
+    value = ($(this).attr("data-guesses"));
+    console.log("After click value = " + value);
+
+    if ( value=== questions[1].answer) {
+    
+      win++;
+      $("#wins").text(win);
+      
+      show('Page3a','Page3');
+      var windowTimeout = setTimeout(function(){
+        console.log("Alert #1");
+        show('Page4','Page3a');
+      }, 2000);
+      stopwatch.stop();
+      stopwatch.reset();
+      stopwatch.start();
+      //stopwatch.time=2000;
+      //$("#display").text(stopwatch.reset());  
+    }
+
+    else if ( value=== questions[1].guesses[0]||
+      value=== questions[1].guesses[2] ||
+      value=== questions[1].guesses[3]) {
+
       loss++;
       $("#losses").text(loss);
+      show('Page3b','Page3');
+      var windowTimeout = setTimeout(function(){
+        console.log("Alert #1");
+        show('Page4','Page3b'); 
+      }, 2000);
       stopwatch.stop();
-      show('Page2b','Page2');
-      
-
-      //wait
-      //show('Page3','Page2b');
-      //stopwatch.start();
+      stopwatch.reset();
+      stopwatch.start();
+      //stopwatch.time=2000;
+      //$("#display").text(stopwatch.reset());  
     }
   });
 };
 
-  registerEventListener();
+  eventListenerBeach();
+
+
+function eventListenerMountain() {
+
+  $(".guesses").on("click", function() {
+
+    value = ($(this).attr("data-guesses"));
+    console.log("After click value = " + value);
+
+    if ( value=== questions[2].answer) {
+    
+      win++;
+      $("#wins").text(win);
+      
+      show('Page4a','Page4');
+      var windowTimeout = setTimeout(function(){
+        console.log("Alert #1");
+        show('Page5','Page4a');
+      }, 2000);
+      stopwatch.stop();
+      stopwatch.reset();
+      stopwatch.start();
+      //stopwatch.time=2000;
+      //$("#display").text(stopwatch.reset());  
+    }
+
+    else if ( value=== questions[2].guesses[0]||
+      value=== questions[2].guesses[1] ||
+      value=== questions[2].guesses[3]) {
+
+      loss++;
+      $("#losses").text(loss);
+      show('Page4b','Page4');
+      var windowTimeout = setTimeout(function(){
+        console.log("Alert #1");
+        show('Page5','Page4b'); 
+      }, 2000);
+      stopwatch.stop();
+      stopwatch.reset();
+      stopwatch.start();
+      //stopwatch.time=2000;
+      //$("#display").text(stopwatch.reset());  
+    }
+  });
+};
+
+  eventListenerMountain();
+
+
+function eventListenerRiver() {
+
+  $(".guesses").on("click", function() {
+
+    value = ($(this).attr("data-guesses"));
+    console.log("After click value = " + value);
+
+    if ( value=== questions[3].answer) {
+    
+      win++;
+      $("#wins").text(win);
+      
+      show('Page5a','Page5');
+      var windowTimeout = setTimeout(function(){
+        console.log("Alert #1");
+        show('Page6','Page5a');
+      }, 2000);
+      stopwatch.stop();
+      stopwatch.reset();
+      stopwatch.start();
+      //stopwatch.time=2000;
+      //$("#display").text(stopwatch.reset());  
+    }
+
+    else if ( value=== questions[3].guesses[1]||
+      value=== questions[3].guesses[2] ||
+      value=== questions[3].guesses[3]) {
+
+      loss++;
+      $("#losses").text(loss);
+      show('Page5b','Page5');
+      var windowTimeout = setTimeout(function(){
+        console.log("Alert #1");
+        show('Page6','Page5b'); 
+      }, 2000);
+      stopwatch.stop();
+      stopwatch.reset();
+      stopwatch.start();
+      //stopwatch.time=2000;
+      //$("#display").text(stopwatch.reset());  
+    }
+  });
+};
+
+  eventListenerRiver();
 
 
 
