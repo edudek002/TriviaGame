@@ -176,10 +176,12 @@ function eventListenerLake() {
   $(".guesses").on("click", function() {
 
     value = ($(this).attr("data-guesses"));
-    console.log("After click value = " + value);
+    //console.log("After click value = " + value);
+    
 
       if ( value=== questions[0].answer) {
       
+        win=0;
         win++;
         $("#wins").text(win);
         
@@ -192,13 +194,14 @@ function eventListenerLake() {
         stopwatch.reset();
         stopwatch.start();
         //stopwatch.time=2000;
-        $("#display").append(stopwatch.start());  
+        $("#display").text("Remaining time: " + stopwatch.time + " seconds.");  
       }
 
       else if ( value=== questions[0].guesses[0]||
         value=== questions[0].guesses[2] ||
         value=== questions[0].guesses[3]) {
 
+        loss=0;
         loss++;
         $("#losses").text(loss);
         show('Page2b','Page2');
@@ -210,7 +213,8 @@ function eventListenerLake() {
         stopwatch.reset();
         stopwatch.start();
         //stopwatch.time=2000;
-        $("#display").append(stopwatch.start());  
+        stopwatch.time=7;
+        $("#display").text("Remaining time: " + stopwatch.time + " seconds.");   
       }
     
  
@@ -219,7 +223,7 @@ function eventListenerLake() {
 
 //if (10>stopwatch.time>3) {
 
-  console.log(stopwatch.time + " seconds left");
+  
   eventListenerLake();
 /*
 }
@@ -249,7 +253,7 @@ function eventListenerBeach() {
   $(".guesses").on("click", function() {
 
     value = ($(this).attr("data-guesses"));
-    console.log("After click value = " + value);
+    //console.log("After click value = " + value);
 
     if ( value=== questions[1].answer) {
     
@@ -296,7 +300,7 @@ function eventListenerMountain() {
   $(".guesses").on("click", function() {
 
     value = ($(this).attr("data-guesses"));
-    console.log("After click value = " + value);
+    //console.log("After click value = " + value);
 
     if ( value=== questions[2].answer) {
     
@@ -315,8 +319,8 @@ function eventListenerMountain() {
       //$("#display").text(stopwatch.reset());  
     }
 
-    else if ( value=== questions[2].guesses[0]||
-      value=== questions[2].guesses[1] ||
+    else if ( value=== questions[2].guesses[1]||
+      value=== questions[2].guesses[2] ||
       value=== questions[2].guesses[3]) {
 
       loss++;
@@ -343,7 +347,7 @@ function eventListenerRiver() {
   $(".guesses").on("click", function() {
 
     value = ($(this).attr("data-guesses"));
-    console.log("After click value = " + value);
+    //console.log("After click value = " + value);
 
     if ( value=== questions[3].answer) {
     
@@ -389,24 +393,9 @@ function eventListenerRiver() {
 
 
 
+
+
 /*
-
-      // MAJOR TASK #3: ATTACH ON-CLICK EVENTS TO "CLEAR" BUTTON
-      // =================================================================================
-
-      // 12. Create an "on-click" event attached to the "#clear" button id.
-      $("#clear").on("click", function() {
-
-        // Inside the on-click event...
-
-        // 13. Use the jQuery "empty()" method to clear the contents of the "#display" div.
-        $("#display").empty();
-  
-
-//event.preventDefault();
-
-
-FRIDGE 11 week4
 __________
 
 QUESTION 34 week3
