@@ -37,14 +37,20 @@ var stopwatch = {
 
     stopwatch.time = 0;
     stopwatch.lap = 1;
-    $("#display").text("Remaining time: 10 seconds.");
+    $("#display1").text("Remaining time: 10 seconds.");
+    $("#display2").text("Remaining time: 10 seconds.");
+    $("#display3").text("Remaining time: 10 seconds.");
+    $("#display4").text("Remaining time: 10 seconds.");
 
   },
   
   start: function() {
 
     // SetInterval to start the count here and set the clock to running.
-    $("#display").text("Remaining time: 10 seconds.");
+    $("#display1").text("Remaining time: 10 seconds.");
+    $("#display2").text("Remaining time: 10 seconds.");
+    $("#display3").text("Remaining time: 10 seconds.");
+    $("#display4").text("Remaining time: 10 seconds.");
     if (!clockRunning) {
         intervalId = setInterval(stopwatch.count, 1000);
         clockRunning = true;
@@ -64,14 +70,19 @@ var stopwatch = {
     stopwatch.time++;
     seconds = 10 - stopwatch.time;
     console.log(seconds); 
-    $("#display").text("Remaining time: " + seconds + " seconds.");
-
+    $("#display1").text("Remaining time: " + seconds + " seconds.");
+    $("#display2").text("Remaining time: " + seconds+ " seconds.");
+    $("#display3").text("Remaining time: " + seconds + " seconds.");
+    $("#display4").text("Remaining time: " + seconds + " seconds.");
     if (stopwatch.time <10){
     }
 
     else {
       stopwatch.stop();
-      $("#information").text("Time is Up!");
+      $("#display1").text("Time is Up!");
+      $("#display2").text("Time is Up!");
+      $("#display3").text("Time is Up!");
+      $("#display4").text("Time is Up!");
     }
   },
 }; //END OF STOPWATCH OBJECT
@@ -109,16 +120,6 @@ var  questions = [
   $("#question2").text(questions[1].question);
   $("#question3").text(questions[2].question);
   $("#question4").text(questions[3].question);
-
-/*
-
-  $("#true1").text(questions[0].answer);
-  $("#true2").text(questions[1].answer);
-  $("#true1").text(questions[2].answer);
-  $("#true2").text(questions[3].answer);
-
-  */
-
 
 // DYNAMICALLY CREATED GUESSES BUTTONS
 // =================================================================================
@@ -168,9 +169,6 @@ for (var i = 0; i < questions[3].guesses.length; i++) {
 //-----------------------------------------------------------------------
 
 
-//console.log(questions[0].guesses[1]);
-//console.log("right answer: "+ questions[0].answer);
-
 function eventListenerLake() {
 
   $(".guesses").on("click", function() {
@@ -193,8 +191,6 @@ function eventListenerLake() {
         stopwatch.stop();
         stopwatch.reset();
         stopwatch.start();
-        //stopwatch.time=2000;
-        $("#display").text("Remaining time: " + stopwatch.time + " seconds.");  
       }
 
       else if ( value=== questions[0].guesses[0]||
@@ -212,40 +208,24 @@ function eventListenerLake() {
         stopwatch.stop();
         stopwatch.reset();
         stopwatch.start();
-        //stopwatch.time=2000;
-        stopwatch.time=7;
-        $("#display").text("Remaining time: " + stopwatch.time + " seconds.");   
       }
-    
- 
-  });
-};
-
-//if (10>stopwatch.time>3) {
-
-  
-  eventListenerLake();
-/*
-}
-else {
+      /* -----worked on oving to page 3 when Time is Up
+      else {
 
       console.log(stopwatch.time + " seconds left");
       notAnswered++;
       $("#notA").text(notAnswered);
-      show("Page2c","Page2");
-      var windowTimeout = setTimeout(function(){
-          console.log("Alert #1");
-          show("Page3","Page2c"); 
-        }, 2000);
+      show("Page3","Page2");
       stopwatch.stop();
       stopwatch.reset();
       stopwatch.start();
-      //stopwatch.time=2000;
-      $("#display").append(stopwatch.start());
-    }
+      }
+      */ 
+ 
+  });
+};
 
-*/
-
+eventListenerLake();
 
 
 function eventListenerBeach() {
@@ -268,8 +248,6 @@ function eventListenerBeach() {
       stopwatch.stop();
       stopwatch.reset();
       stopwatch.start();
-      //stopwatch.time=2000;
-      //$("#display").text(stopwatch.reset());  
     }
 
     else if ( value=== questions[1].guesses[0]||
@@ -285,9 +263,7 @@ function eventListenerBeach() {
       }, 2000);
       stopwatch.stop();
       stopwatch.reset();
-      stopwatch.start();
-      //stopwatch.time=2000;
-      //$("#display").text(stopwatch.reset());  
+      stopwatch.start(); 
     }
   });
 };
@@ -300,7 +276,6 @@ function eventListenerMountain() {
   $(".guesses").on("click", function() {
 
     value = ($(this).attr("data-guesses"));
-    //console.log("After click value = " + value);
 
     if ( value=== questions[2].answer) {
     
@@ -314,9 +289,7 @@ function eventListenerMountain() {
       }, 2000);
       stopwatch.stop();
       stopwatch.reset();
-      stopwatch.start();
-      //stopwatch.time=2000;
-      //$("#display").text(stopwatch.reset());  
+      stopwatch.start(); 
     }
 
     else if ( value=== questions[2].guesses[1]||
@@ -332,9 +305,7 @@ function eventListenerMountain() {
       }, 2000);
       stopwatch.stop();
       stopwatch.reset();
-      stopwatch.start();
-      //stopwatch.time=2000;
-      //$("#display").text(stopwatch.reset());  
+      stopwatch.start();  
     }
   });
 };
@@ -346,8 +317,9 @@ function eventListenerRiver() {
 
   $(".guesses").on("click", function() {
 
+    $("#try").text("Remaining time: 10 seconds.");
+
     value = ($(this).attr("data-guesses"));
-    //console.log("After click value = " + value);
 
     if ( value=== questions[3].answer) {
     
@@ -361,9 +333,7 @@ function eventListenerRiver() {
       }, 2000);
       stopwatch.stop();
       stopwatch.reset();
-      stopwatch.start();
-      //stopwatch.time=2000;
-      //$("#display").text(stopwatch.reset());  
+      stopwatch.start();  
     }
 
     else if ( value=== questions[3].guesses[1]||
@@ -379,9 +349,7 @@ function eventListenerRiver() {
       }, 2000);
       stopwatch.stop();
       stopwatch.reset();
-      stopwatch.start();
-      //stopwatch.time=2000;
-      //$("#display").text(stopwatch.reset());  
+      stopwatch.start();  
     }
   });
 };
