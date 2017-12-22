@@ -238,7 +238,6 @@ function eventListenerBeach() {
 
     value = ($(this).attr("data-guesses"));
     //console.log("After click value = " + value);
-    console.log("check time "+ stopwatch.time);
 
     /*if (stopwatch.time!=-2) 
     { worked on moving to the next page when Time Up! shows up*/
@@ -250,7 +249,7 @@ function eventListenerBeach() {
         
         show('Page3a','Page3');
         var windowTimeout = setTimeout(function(){
-          console.log("Alert #1");
+          console.log("Alert #2");
           show('Page4','Page3a');
         }, 2000);
         stopwatch.stop();
@@ -266,7 +265,7 @@ function eventListenerBeach() {
         $("#losses").text(loss);
         show('Page3b','Page3');
         var windowTimeout = setTimeout(function(){
-          console.log("Alert #1");
+          console.log("Alert #2");
           show('Page4','Page3b'); 
         }, 2000);
         stopwatch.stop();
@@ -308,7 +307,7 @@ function eventListenerMountain() {
       
       show('Page4a','Page4');
       var windowTimeout = setTimeout(function(){
-        console.log("Alert #1");
+        console.log("Alert #3");
         show('Page5','Page4a');
       }, 2000);
       stopwatch.stop();
@@ -324,7 +323,7 @@ function eventListenerMountain() {
       $("#losses").text(loss);
       show('Page4b','Page4');
       var windowTimeout = setTimeout(function(){
-        console.log("Alert #1");
+        console.log("Alert #3");
         show('Page5','Page4b'); 
       }, 2000);
       stopwatch.stop();
@@ -352,7 +351,7 @@ function eventListenerRiver() {
       
       show('Page5a','Page5');
       var windowTimeout = setTimeout(function(){
-        console.log("Alert #1");
+        console.log("Alert #4");
         show('Page6','Page5a');
       }, 2000);
       stopwatch.stop();
@@ -368,7 +367,7 @@ function eventListenerRiver() {
       $("#losses").text(loss);
       show('Page5b','Page5');
       var windowTimeout = setTimeout(function(){
-        console.log("Alert #1");
+        console.log("Alert #4");
         show('Page6','Page5b'); 
       }, 2000);
       stopwatch.stop();
