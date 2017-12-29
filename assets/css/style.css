@@ -147,6 +147,7 @@ p {
 #question1, #question2, #question3, #question4 {
 
   position: relative;
+  left: 620px;
   top: 150px;
   font-family: monospace;
   font-weight:bold
@@ -154,7 +155,6 @@ p {
   width: 100%;
   height: 40px;
   color: #ffcc00;
-  text-align: center;
   z-index: 1;
 }
 
