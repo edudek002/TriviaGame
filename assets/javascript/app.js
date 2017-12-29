@@ -1,10 +1,9 @@
-
 // This code will run as soon as the page loads
 
-window.onload =  function() {
+//window.onload =  function() {
 
-  $("#start").on("click", stopwatch.start);
-};
+  //$("#start").on("click", stopwatch.start);
+//};
 
 //  Variable that holds setInterval that runs the stopwatch
 var intervalId;
@@ -86,9 +85,13 @@ var stopwatch = {
       $("#display2").text("Time is Up!");
       $("#display3").text("Time is Up!");
       $("#display4").text("Time is Up!");
+      notAnswered++;
+      $("#notA").text(notAnswered);
     }
   },
 }; //END OF STOPWATCH OBJECT
+
+$("#start").on("click", stopwatch.start);
 
 //-----------------------------------------------------------------------------------------
 //   GAME QUESTIONS
@@ -174,9 +177,6 @@ for (var i = 0; i < questions[3].guesses.length; i++) {
 
 function eventListenerLake() {
 
-  /*if (stopwatch.time>0) {
-     worked on moving to the next page when Time Up! shows up*/
-
     $(".guesses").on("click", function() {
 
      value = ($(this).attr("data-guesses"));
@@ -185,6 +185,8 @@ function eventListenerLake() {
       if ( value=== questions[0].answer) {
       
         win=0;
+        loss=0;
+        notAnswered=0;
         win++;
         $("#wins").text(win);
         stopwatch.stop();
@@ -201,7 +203,9 @@ function eventListenerLake() {
         value=== questions[0].guesses[2] ||
         value=== questions[0].guesses[3]) {
 
+        win=0;
         loss=0;
+        notAnswered=0;
         loss++;
         $("#losses").text(loss);
         stopwatch.stop();
@@ -216,9 +220,6 @@ function eventListenerLake() {
 
       /* worked on moving to the next page when Time Up! shows u
   else {
-    alert("Time is up!");
-    notAnswered++;
-    $("#notA").text(notAnswered);
     show("Page3","Page2");
     stopwatch.stop();
     stopwatch.reset();
@@ -229,7 +230,7 @@ function eventListenerLake() {
   });
 };
 
-eventListenerLake();
+setTimeout(eventListenerLake(), 1000*10);
 
 
 function eventListenerBeach() {
@@ -239,9 +240,6 @@ function eventListenerBeach() {
     value = ($(this).attr("data-guesses"));
     //console.log("After click value = " + value);
 
-    /*if (stopwatch.time!=-2) 
-    { worked on moving to the next page when Time Up! shows up*/
-
       if ( value=== questions[1].answer) {
       
         win++;
@@ -249,7 +247,7 @@ function eventListenerBeach() {
         
         show('Page3a','Page3');
         var windowTimeout = setTimeout(function(){
-          console.log("Alert #2");
+          console.log("Alert #1");
           show('Page4','Page3a');
         }, 2000);
         stopwatch.stop();
@@ -265,33 +263,18 @@ function eventListenerBeach() {
         $("#losses").text(loss);
         show('Page3b','Page3');
         var windowTimeout = setTimeout(function(){
-          console.log("Alert #2");
+          console.log("Alert #1");
           show('Page4','Page3b'); 
         }, 2000);
         stopwatch.stop();
         stopwatch.reset();
         stopwatch.start(); 
       }
-    /*
-    }
-
-    else {
-
-    alert("Time is Up");
-    notAnswered++;
-    $("#notA").text(notAnswered);
-    show("Page4","Page");
-    stopwatch.stop();
-    stopwatch.reset();
-    stopwatch.start();
-        
-    }
-    */
-
+    
   });
 };
 
-  eventListenerBeach();
+setTimeout(eventListenerBeach(), 1000*10);
 
 
 function eventListenerMountain() {
@@ -307,7 +290,7 @@ function eventListenerMountain() {
       
       show('Page4a','Page4');
       var windowTimeout = setTimeout(function(){
-        console.log("Alert #3");
+        console.log("Alert #1");
         show('Page5','Page4a');
       }, 2000);
       stopwatch.stop();
@@ -323,7 +306,7 @@ function eventListenerMountain() {
       $("#losses").text(loss);
       show('Page4b','Page4');
       var windowTimeout = setTimeout(function(){
-        console.log("Alert #3");
+        console.log("Alert #1");
         show('Page5','Page4b'); 
       }, 2000);
       stopwatch.stop();
@@ -333,14 +316,12 @@ function eventListenerMountain() {
   });
 };
 
-  eventListenerMountain();
+setTimeout(eventListenerMountain(), 1000 * 10);
 
 
 function eventListenerRiver() {
 
   $(".guesses").on("click", function() {
-
-    $("#try").text("Remaining time: 10 seconds.");
 
     value = ($(this).attr("data-guesses"));
 
@@ -351,12 +332,11 @@ function eventListenerRiver() {
       
       show('Page5a','Page5');
       var windowTimeout = setTimeout(function(){
-        console.log("Alert #4");
+        console.log("Alert #1");
         show('Page6','Page5a');
       }, 2000);
       stopwatch.stop();
-      stopwatch.reset();
-      stopwatch.start();  
+  
     }
 
     else if ( value=== questions[3].guesses[1]||
@@ -367,55 +347,15 @@ function eventListenerRiver() {
       $("#losses").text(loss);
       show('Page5b','Page5');
       var windowTimeout = setTimeout(function(){
-        console.log("Alert #4");
+        console.log("Alert #1");
         show('Page6','Page5b'); 
       }, 2000);
       stopwatch.stop();
-      stopwatch.reset();
-      stopwatch.start();  
+  
     }
   });
 };
 
-  eventListenerRiver();
-
-
-
-
-
-
-
-
-/*
-__________
-
-QUESTION 34 week3
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
+setTimeout(eventListenerRiver(),1000 * 10);
 
 
