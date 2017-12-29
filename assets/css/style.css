@@ -21,8 +21,9 @@ button {
 
 /*text for a Title*/
 p {
-    position: relative;
-    top: 130px;
+    position: absolute;
+    top: 100px;
+    left:800px;
     text-align: center;
     color: navy;
     z-index: 2;

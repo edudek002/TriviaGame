@@ -101,23 +101,23 @@ var  questions = [
   {
     "question":"What is the largest lake in Minnesota?",
     "guesses":["Lake Minnetonka","Red Lake","Leech Lake ","Mille Lacs Lake"],
-    "answer":"Red Lake"
+    "answer":"Red Lake",
   },
   {
     "question":"What is the longest beach in the US?",
     "guesses":["Myrtle Beach, SC","Virginia Beach, VA","Canaveral Seashore, FL","Cumberland Island, GA"],
-    "answer":"Virginia Beach, VA"
+    "answer":"Virginia Beach, VA",
   },
   {
     "question":"What is the highest mountain in Europe?",
     "guesses":["Mont Blanc, France","Matterhorn, Switzerland","Mount Olympus, Cyprus","Grossglockner,Austria"],
-    "answer":"Mont Blanc, France"
+    "answer":"Mont Blanc, France",
   },
   {
 
   "question":"What is the longest river in the world?",
     "guesses":["Mississippi","Nile","Amazon","Volga"],
-    "answer":"Amazon"
+    "answer":"Amazon",
 }];
 
 // Create questions
@@ -185,8 +185,11 @@ function eventListenerLake() {
       if ( value=== questions[0].answer) {
       
         win=0;
+        $("#wins").text(win);
         loss=0;
+        $("#losses").text(loss);
         notAnswered=0;
+        $("#notA").text(notAnswered);
         win++;
         $("#wins").text(win);
         stopwatch.stop();
@@ -204,8 +207,11 @@ function eventListenerLake() {
         value=== questions[0].guesses[3]) {
 
         win=0;
+        $("#wins").text(win);
         loss=0;
+        $("#losses").text(loss);
         notAnswered=0;
+        $("#notA").text(notAnswered);
         loss++;
         $("#losses").text(loss);
         stopwatch.stop();
@@ -339,8 +345,8 @@ function eventListenerRiver() {
   
     }
 
-    else if ( value=== questions[3].guesses[1]||
-      value=== questions[3].guesses[2] ||
+    else if ( value=== questions[3].guesses[0]||
+      value=== questions[3].guesses[1] ||
       value=== questions[3].guesses[3]) {
 
       loss++;
